@@ -3,9 +3,9 @@ module FaqModule
     def initialize(params)
       # TODO: identify origin and set company
       @company = Company.last
-      @question = params["question.original"]
-      @answer = params["answer.original"]
-      @hashtags = params["hashtags.original"]
+      @question = params["question"]
+      @answer = params["answer"]
+      @hashtags = params["hashtags"]
     end
 
     def call
