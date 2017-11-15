@@ -20,7 +20,7 @@ class App < Sinatra::Base
       response = InterpretService.call(result["action"], result["parameters"])
     end
     response += request.body.read.to_s
-
+    response += 'olákkk'
     content_type :json
     {
       "speech": response,
