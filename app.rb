@@ -4,10 +4,13 @@ require 'sinatra/activerecord'
 
 require './config/database'
 
-Dir["./app/models/*.rb"].each {|file| require file }
-Dir["./app/services/**/*.rb"].each {|file| require file }
+#Dir["./app/models/*.rb"].each {|file| require file }
+#Dir["./app/services/**/*.rb"].each {|file| require file }
 
 class App < Sinatra::Base
+
+  set :root, "./app"
+
   get '/sinatra' do
     'Hello world Sinatra!'
   end
@@ -26,5 +29,10 @@ class App < Sinatra::Base
       "displayText": response,
       "source": "OneBitBot"
     }.to_json
+  end
+
+  get '/index' do
+    @caio = "Oi"
+    erb :index
   end
 end
