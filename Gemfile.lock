@@ -1,6 +1,5 @@
 GEM
   remote: http://rubygems.org/
-  remote: https://github.com/caiodsc/facebook_messenger/
   specs:
     activemodel (5.1.0)
       activesupport (= 5.1.0)
@@ -88,7 +87,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   database_cleaner
-  facebook-messenger!
+  facebook-messenger
   factory_girl (~> 4.0)
   ffaker
   pg
