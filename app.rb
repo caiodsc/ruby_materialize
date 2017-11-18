@@ -7,6 +7,8 @@ require_relative './config.rb'
 
 include Facebook::Messenger
 
+Facebook::Messenger::Subscriptions.subscribe(access_token: ACCESS_TOKEN)
+
 Dir["./app/models/*.rb"].each {|file| require file }
 Dir["./app/services/**/*.rb"].each {|file| require file }
 
@@ -22,20 +24,10 @@ class App < Sinatra::Base
   post '/webhook' do
     result = JSON.parse(request.body.read)["result"]
     if result["contexts"].present?
-      #response = InterpretService.call(result["action"], result["contexts"][0]["parameters"], result["contexts"][-1]["parameters"]["facebook_sender_id"])
-      Bot.deliver({
-                      recipient: {
-                          id: result["contexts"][-1]["parameters"]["facebook_sender_id"].to_s
-                      },
-                      message: {
-                          text: 'Human?'
-                      }
-                  }, access_token: ACCESS_TOKEN)
+      InterpretService.call(result["action"], result["contexts"][0]["parameters"], result["contexts"][-1]["parameters"]["facebook_sender_id"])
     else
-      #response = InterpretService.call(result["action"], result["parameters"], result["parameters"]["facebook_sender_id"])
+      InterpretService.call(result["action"], result["parameters"], result["parameters"]["facebook_sender_id"])
     end
-    #response += result.to_s
-    response = "ok"
   end
 
   get '/index' do
