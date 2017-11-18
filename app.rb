@@ -22,11 +22,12 @@ class App < Sinatra::Base
   end
 
   post '/webhook' do
+    IS = InterpretService.new
     result = JSON.parse(request.body.read)["result"]
     if result["contexts"].present?
-      response = InterpretService.call(result["action"], result["contexts"][0]["parameters"], result["contexts"][-1]["parameters"]["facebook_sender_id"])
+      response = IS.call(result["action"], result["contexts"][0]["parameters"], result["contexts"][-1]["parameters"]["facebook_sender_id"])
     else
-      response = InterpretService.call(result["action"], result["parameters"], result["parameters"]["facebook_sender_id"])
+      response = IS.call(result["action"], result["parameters"], result["parameters"]["facebook_sender_id"])
     end
     return
     #response += result.to_s
