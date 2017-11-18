@@ -30,6 +30,14 @@ class App < Sinatra::Base
       response = IS.call(result["action"], result["parameters"], result["parameters"]["facebook_sender_id"])
     end
     #response += result.to_s
+    Bot.deliver({
+                    recipient: {
+                        id: facebookId.to_s
+                    },
+                    message: {
+                        text: 'Human?'
+                    }
+                }, access_token: ACCESS_TOKEN)
   end
 
   get '/index' do
