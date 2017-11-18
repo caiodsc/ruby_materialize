@@ -33,9 +33,23 @@ class App < Sinatra::Base
     response = "Caio"
     content_type :json
     {
-        "speech": response,
-        "displayText": response,
-        "source": "BemolBot"
+        "data": {
+            "facebook": {
+                "text": "Pick a color:",
+                "quick_replies": [
+                    {
+                        "content_type": "text",
+                        "title": "Red",
+                        "payload": "red"
+                    },
+                    {
+                        "content_type": "text",
+                        "title": "Green",
+                        "payload": "green"
+                    }
+                ]
+            }
+        }
     }.to_json
   end
 
