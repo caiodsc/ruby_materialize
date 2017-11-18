@@ -6,10 +6,7 @@ gem "sinatra-activerecord"
 gem 'pg'
 gem 'rake'
 gem 'pg_search'
-
-source 'https://github.com/caiodsc/facebook_messenger' do
-  gem 'facebook-messenger'
-end
+gem 'facebook-messenger',  :git => 'git://github.com/caiodsc/facebook_messenger.git'
 
 group :development do
  gem "tux"
