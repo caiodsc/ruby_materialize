@@ -36,7 +36,7 @@ class App < Sinatra::Base
   end
 
   get '/index' do
-    @caio = ACCESS_TOKEN
+    @caio = "ACCESS_TOKEN"
     erb :index
   end
 end
