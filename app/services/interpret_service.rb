@@ -17,7 +17,7 @@ class InterpretService
                       message: {
                           text: 'Human?'
                       }
-                  }, access_token: ACCESS_TOKEN)
+                  }, access_token: ACCESS_TOKEN) && nil
     else
       "Não compreendi o seu desejo"
     end
