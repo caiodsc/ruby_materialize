@@ -27,7 +27,13 @@ class App < Sinatra::Base
       response = InterpretService.call(result["action"], result["parameters"], result["parameters"]["facebook_sender_id"])
     end
     #response += result.to_s
-
+    response = "ok"
+    content_type :json
+    {
+      "speech": response,
+      "displayText": response,
+      "source": "OneBitBot"
+    }.to_json
   end
 
   get '/index' do
