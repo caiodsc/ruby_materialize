@@ -22,13 +22,6 @@ class App < Sinatra::Base
   end
 
   post '/webhook' do
-    Bot.on :message do |message|
-      message.typing_on
-
-      # Do something expensive
-
-      message.reply(text: 'Hello, human!')
-    end
     result = JSON.parse(request.body.read)["result"]
     if result["contexts"].present?
       #response = InterpretService.call(result["action"], result["contexts"][0]["parameters"], result["contexts"][-1]["parameters"]["facebook_sender_id"])
@@ -36,7 +29,14 @@ class App < Sinatra::Base
       #response = InterpretService.call(result["action"], result["parameters"], result["parameters"]["facebook_sender_id"])
     end
     #response += result.to_s
-
+    Bot.deliver({
+                    recipient: {
+                        id: result["contexts"][-1]["parameters"]["facebook_sender_id"].to_s
+                    },
+                    message: {
+                        text: 'Human?'
+                    }
+                }, access_token: ACCESS_TOKEN)
     response += result.to_s
     content_type :json
     {
