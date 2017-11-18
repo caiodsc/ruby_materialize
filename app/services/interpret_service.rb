@@ -18,9 +18,9 @@ class InterpretService
       #                    text: 'Human?'
       #                }
       #            }, access_token: ACCESS_TOKEN)
-      nome = 'caio'.encrypt
-      nome += nome.decrypt
-      nome
+      #nome = 'caio'.encrypt
+      #nome += nome.decrypt
+      #nome
     else
       "Não compreendi o seu desejo"
     end

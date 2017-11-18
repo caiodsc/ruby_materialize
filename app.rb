@@ -41,6 +41,7 @@ class App < Sinatra::Base
 
   get '/index' do
     @caio = "Informação"
+    @treta = @params[:id].decrypt
     erb :index
   end
 end

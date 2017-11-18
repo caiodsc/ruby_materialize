@@ -27,3 +27,4 @@ end
 #puts cipher.decrypt('guess')          # raises OpenSSL::Cipher::CipherError
 #puts cipher.decrypt(key)              # confidential
 
+puts 'Caio'.encrypt
