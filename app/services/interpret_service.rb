@@ -17,7 +17,7 @@ class InterpretService
                       message: {
                           text: 'Human?'
                       }
-                  }, access_token: ACCESS_TOKEN); nil
+                  }, access_token: ACCESS_TOKEN)
       response = "Caio Câmara"
       response
     else
