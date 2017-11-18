@@ -16,6 +16,8 @@ class App < Sinatra::Base
 
   #set :root, "./app"
   set :views, "./app/views"
+  set :public_folder, "./app/public"
+  set :static_cache_control, [:public]
 
   get '/sinatra' do
     'Hello world Sinatra!'
@@ -39,9 +41,9 @@ class App < Sinatra::Base
     .to_json
   end
 
-  get '/index' do
+  get '/teste' do
     @caio = "Informação"
     @treta = @params[:id].decrypt
-    erb :index
+    erb :teste
   end
 end
