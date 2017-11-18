@@ -42,8 +42,8 @@ class App < Sinatra::Base
   end
 
   get '/teste' do
-    @caio = "Informação"
+    @caio = request.path_info.to_s
     @treta = @params[:id].decrypt
-    erb :teste
+    erb :teste, :layout => :index
   end
 end
