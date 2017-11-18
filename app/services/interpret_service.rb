@@ -8,7 +8,8 @@ class InterpretService
     when "remove"
       FaqModule::RemoveService.new(params).call()
     when "help"
-      HelpService.call()
+      ACCESS_TOKEN
+      #HelpService.call()
     else
       "Não compreendi o seu desejo"
     end

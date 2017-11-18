@@ -6,7 +6,7 @@ gem "sinatra-activerecord"
 gem 'pg'
 gem 'rake'
 gem 'pg_search'
-
+gem 'facebook-messenger'
 
 group :development do
  gem "tux"
