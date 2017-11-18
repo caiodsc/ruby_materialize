@@ -29,7 +29,6 @@ class App < Sinatra::Base
     else
       response = IS.call(result["action"], result["parameters"], result["parameters"]["facebook_sender_id"])
     end
-    return
     #response += result.to_s
   end
 
