@@ -22,18 +22,18 @@ class App < Sinatra::Base
   post '/webhook' do
     result = JSON.parse(request.body.read)["result"]
     if result["contexts"].present?
-      response = InterpretService.call(result["action"], result["contexts"][0]["parameters"], result["contexts"][-1]["parameters"]["facebook_sender_id"])
+      InterpretService.call(result["action"], result["contexts"][0]["parameters"], result["contexts"][-1]["parameters"]["facebook_sender_id"]); nil
     else
-      response = InterpretService.call(result["action"], result["parameters"], result["parameters"]["facebook_sender_id"])
+      InterpretService.call(result["action"], result["parameters"], result["parameters"]["facebook_sender_id"]); nil
     end
     #response += result.to_s
-    response = ""
-    content_type :json
-    {
-      "speech": response,
-      "displayText": response,
-      "source": "OneBitBot"
-    }.to_json
+    #response = ""
+    #content_type :json
+    #{
+    #  "speech": response,
+    #  "displayText": response,
+    #  "source": "OneBitBot"
+    #}.to_json
   end
 
   get '/index' do
