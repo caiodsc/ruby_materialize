@@ -36,10 +36,6 @@ class App < Sinatra::Base
     end
     #response += result.to_s
     response = "ok"
-    content_type :json
-    {
-      "source": "ChatBot"
-    }.to_json
   end
 
   get '/index' do
