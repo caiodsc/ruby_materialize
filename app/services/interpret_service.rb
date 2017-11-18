@@ -10,7 +10,6 @@ class InterpretService
     when "help"
       #ACCESS_TOKEN
       #HelpService.call()
-      puts "Olá"
       Bot.deliver({
                       recipient: {
                           id: facebookId.to_s
@@ -18,7 +17,9 @@ class InterpretService
                       message: {
                           text: 'Human?'
                       }
-                  }, access_token: ACCESS_TOKEN)
+                  }, access_token: ACCESS_TOKEN); nil
+      response = "Caio Câmara"
+      response
     else
       "Não compreendi o seu desejo"
     end
