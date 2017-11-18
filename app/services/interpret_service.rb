@@ -10,14 +10,15 @@ class InterpretService
     when "help"
       #ACCESS_TOKEN
       #HelpService.call()
-      c=Bot.deliver({
-                        recipient: {
-                            id: facebookId.to_s
-                        },
-                        message: {
-                            text: 'Human?'
-                        }
-                    }, access_token: ACCESS_TOKEN); nil
+      Bot.deliver({
+                      recipient: {
+                          id: facebookId.to_s
+                      },
+                      message: {
+                          text: 'Human?'
+                      }
+                  }, access_token: ACCESS_TOKEN)
+      _=_
     else
       "Não compreendi o seu desejo"
     end
