@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Acqua Park</title>
+    <!-- Ícone do site -->
+    <link rel="icon" href="icons/favicon.ico">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
+    <link href="<%= 'css/' + request.path_info[1..-1] + '.css' %>" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <%= erb :z_header %>
+  <%= yield %>
+  <%= erb :z_footer %>
+</body>
+
+</html>
