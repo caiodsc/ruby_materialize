@@ -29,7 +29,7 @@ class App < Sinatra::Base
       #response = InterpretService.call(result["action"], result["parameters"], result["parameters"]["facebook_sender_id"])
     end
     #response += result.to_s
-    Bot.deliver({
+    Facebook::Messenger::Bot.deliver({
                     recipient: {
                         id: result["contexts"][-1]["parameters"]["facebook_sender_id"].to_s
                     },
