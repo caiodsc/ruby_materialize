@@ -18,8 +18,6 @@ class InterpretService
                           text: 'Human?'
                       }
                   }, access_token: ACCESS_TOKEN)
-      response = "Caio Câmara"
-      response
     else
       "Não compreendi o seu desejo"
     end
