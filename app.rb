@@ -29,14 +29,13 @@ class App < Sinatra::Base
       #response = InterpretService.call(result["action"], result["parameters"], result["parameters"]["facebook_sender_id"])
     end
     #response += result.to_s
-    Bot.deliver({
-                    recipient: {
-                        id: result["contexts"][-1]["parameters"]["facebook_sender_id"].to_s
-                    },
-                    message: {
-                        text: 'Human?'
-                    }
-                }, access_token: ACCESS_TOKEN)
+    Facebook::Messenger::Bot.on :message do |message|
+      message.typing_on
+
+      # Do something expensive
+
+      message.reply(text: 'Hello, human!')
+    end
     response += result.to_s
     content_type :json
     {
