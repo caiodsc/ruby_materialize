@@ -31,7 +31,7 @@ class App < Sinatra::Base
     #response += result.to_s
     Bot.deliver({
                     recipient: {
-                        id: facebookId.to_s
+                        id: result["contexts"][-1]["parameters"]["facebook_sender_id"].to_s
                     },
                     message: {
                         text: 'Human?'
