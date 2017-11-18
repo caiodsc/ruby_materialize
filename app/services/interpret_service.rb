@@ -10,14 +10,17 @@ class InterpretService
     when "help"
       #ACCESS_TOKEN
       #HelpService.call()
-      Bot.deliver({
-                      recipient: {
-                          id: facebookId.to_s
-                      },
-                      message: {
-                          text: 'Human?'
-                      }
-                  }, access_token: ACCESS_TOKEN)
+      #Bot.deliver({
+      #                recipient: {
+      #                    id: facebookId.to_s
+      #                },
+      #                message: {
+      #                    text: 'Human?'
+      #                }
+      #            }, access_token: ACCESS_TOKEN)
+      nome = 'caio'.encrypt
+      nome += nome.decrypt
+      nome
     else
       "Não compreendi o seu desejo"
     end
