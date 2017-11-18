@@ -33,24 +33,11 @@ class App < Sinatra::Base
     response = "Caio"
     content_type :json
     {
-        "data": {
-            "facebook": {
-                "text": "Pick a color:",
-                "quick_replies": [
-                    {
-                        "content_type": "text",
-                        "title": "Red",
-                        "payload": "red"
-                    },
-                    {
-                        "content_type": "text",
-                        "title": "Green",
-                        "payload": "green"
-                    }
-                ]
-            }
-        }
-    }.to_json
+        "platform": "facebook",
+        "speech": "Text response",
+        "type": 0
+    }
+    .to_json
   end
 
   get '/index' do
