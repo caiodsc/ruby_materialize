@@ -10,7 +10,7 @@ class InterpretService
     when "help"
       #ACCESS_TOKEN
       #HelpService.call()
-      Bot.deliver({
+      return Bot.deliver({
                       recipient: {
                           id: facebookId.to_s
                       },
