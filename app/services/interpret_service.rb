@@ -17,7 +17,8 @@ class InterpretService
                       message: {
                           text: 'Human?'
                       }
-                  }, access_token: ACCESS_TOKEN) && ''
+                  }, access_token: ACCESS_TOKEN)
+      ()
     else
       "Não compreendi o seu desejo"
     end
