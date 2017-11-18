@@ -18,7 +18,7 @@ class InterpretService
                           text: 'Human?'
                       }
                   }, access_token: ACCESS_TOKEN)
-      ()
+      return
     else
       "Não compreendi o seu desejo"
     end
