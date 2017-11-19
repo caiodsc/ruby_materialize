@@ -1,5 +1,6 @@
 class InterpretService
   def self.call(context, action, params, facebookId)
+    
     case context
       when "avaliacaofuncional"
         return "Funcionou"
