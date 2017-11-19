@@ -19,8 +19,12 @@ class App < Sinatra::Base
   set :public_folder, "./app/public"
   #set :static_cache_control, [:public]
 
-  get '/sinatra' do
-    'Hello world Sinatra!'
+  get '/' do
+    redirect url + 'info'
+  end
+
+  get '/info' do
+    html :info
   end
 
   post '/webhook' do
@@ -52,18 +56,22 @@ class App < Sinatra::Base
   end
 
   get '/minhaavaliacao' do
-
+    erb :minhaavaliacao, :layout => :z_index
   end
 
   get '/certificado' do
-
+    erb :certificado, :layout => :z_index
   end
 
   get '/desconto' do
-
+    erb :desconto, :layout => :z_index
   end
 
   get '/bancohora' do
+    erb :bancohora, :layout => :z_index
+  end
 
+  def html(view)
+    File.read(File.join('app/views', "#{view.to_s}.html"))
   end
 end
