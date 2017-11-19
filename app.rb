@@ -48,7 +48,7 @@ class App < Sinatra::Base
   end
 
   get '/contracheque' do
-
+    erb :contracheque, :layout => :z_index
   end
 
   get '/minhaavaliacao' do
