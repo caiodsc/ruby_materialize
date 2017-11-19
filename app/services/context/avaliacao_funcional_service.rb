@@ -14,6 +14,8 @@ module ContextModule
       case @action
         when 'minha_avaliacao'
           return "Funcionou!"
+        else
+          return "Não funcionou!"
       end
     end
   end
