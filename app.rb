@@ -44,13 +44,13 @@ class App < Sinatra::Base
     end
     #response += result.to_s
 
+    response = result.to_s
     content_type :json
     {
-        "platform": "facebook",
-        "speech": result,
-        "type": 0
-    }
-    .to_json
+        "speech": response,
+        "displayText": response,
+        "source": "OneBitBot"
+    }.to_json
   end
 
   get '/teste' do
