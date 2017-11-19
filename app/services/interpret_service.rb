@@ -3,7 +3,7 @@ class InterpretService
     case context
       when "avaliacaofuncional"
         #return "Funcionou"
-        ContextModule::AvaliacaoFuncionalService.new(params, action).call
+        ContextModule::AvaliacaoFuncionalService.new(action, params).call
       when "create"
         FaqModule::CreateService.new(params).call
       when "remove"
