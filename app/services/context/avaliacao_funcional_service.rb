@@ -13,7 +13,7 @@ module ContextModule
       end
       case @action
         when 'minha_avaliacao'
-          return "Funcionou!"
+          return Date.today.year
         else
           return "Não funcionou!"
       end
