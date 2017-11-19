@@ -13,11 +13,9 @@ module ContextModule
       end
       case @action
         when 'minha_avaliacao'
-          #return Date.today.year
           years_list = (Date.today.year-3..Date.today.year).to_a
           response =
           {
-              #"speech": "Qual contracheque deseja visualizar? 💵",
               "messages": [
                   {
                       "platform": "facebook",
@@ -28,8 +26,10 @@ module ContextModule
               ]
           }.to_json
           return response
+        when 'ano_escolhido'
+          return "Ano escolhido"
         else
-          return "Não funcionou!"
+          return
       end
     end
   end
