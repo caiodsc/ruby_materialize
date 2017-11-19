@@ -15,7 +15,7 @@ module ContextModule
         when 'minha_avaliacao'
           #return Date.today.year
           years_list = (Date.today.year-3..Date.today.year).to_a
-          content_type :json
+          response =
           {
               #"speech": "Qual contracheque deseja visualizar? 💵",
               "messages": [
@@ -27,6 +27,7 @@ module ContextModule
                   }
               ]
           }.to_json
+          return response
         else
           return "Não funcionou!"
       end
