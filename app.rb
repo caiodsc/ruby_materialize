@@ -17,7 +17,7 @@ class App < Sinatra::Base
   #set :root, "./app"
   set :views, "./app/views"
   set :public_folder, "./app/public"
-  set :static_cache_control, [:public]
+  #set :static_cache_control, [:public]
 
   get '/sinatra' do
     'Hello world Sinatra!'
@@ -44,7 +44,7 @@ class App < Sinatra::Base
   get '/teste' do
     #retorna
     @treta = @params[:id].decrypt
-    erb :teste, :layout => :index
+    erb :teste, :layout => :z_index
   end
 
   get '/contracheque' do

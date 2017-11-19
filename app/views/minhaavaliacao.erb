@@ -1,0 +1,110 @@
+<table class="mainTemplate">
+    <!-- LOGO - BEGIN -->
+    <tr>
+        <td class="mainTemplateLogo" align="center">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                    <td align="center" valign="top" >
+                      <img class="imgLogo" src="bemol_logo.png">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <!-- LOGO - END -->
+
+    <!-- BLOCK TITLE - BEGIN -->
+    <tr>
+        <td class="mainTemplateTitle" align="center">
+            <table>
+                <tr>
+                    <td align="center" valign="top">
+                      <h1>Minha Avaliação</h1>
+                      <h2>$dataAvaliacao$</h2>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <!-- BLOCK TITLE - END -->
+
+
+    <!-- BLOCK CONTENT - BEGIN -->
+    <tr>
+        <td class="mainContent" align="center">
+            <table class="mainContentTable">
+              
+              <!-- BLOCK IDENTIFICACAO - BEGIN -->
+              <tr class="mainContentTable">
+                <td class="mainContentTable" align="center">
+                  <div class="row nopadding" >
+                    <div class="col-xs-6 nopadding"><b>Nome: </b>$nome$</div>
+                    <div class="col-xs-6 nopadding"><b>Área: </b>$area$</div>
+                  </div>
+                  <div class="row nopadding">
+                    <div class="col-xs-6 nopadding"><b>Cargo: </b>$cargo$</div>
+                    <div class="col-xs-6 nopadding"><b>Matrícula: </b>$matricula$</div>
+                  </div>
+                </td>
+              </tr>
+              <!-- BLOCK IDENTIFICACAO - END -->
+              <tr><td><hr></td></tr>
+              <!-- BLOCK TABELA DESCONTOS - BEGIN -->
+              <tr class="mainContentTable">
+                <td class="mainContentTable">
+                  <table width="100%">
+                    <thead>
+                      <tr>
+                        <th style="text-align: center;width:35%">Critério</th>
+                        <th style="text-align: center;width:15%">Ponderação</th>
+                        <th style="text-align: center;width:15%">Avaliação</th>
+                        <th style="text-align: center;width:15%">Correção</th>
+                        <th style="text-align: center;width:15%">Valor</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    $avaliacao$
+                    </tbody>
+                    <tfoot style="border-top: 20px;">
+                      <tr align="center">
+                        <td colspan="3"><b>Avaliador:</b>$nomeAvaliador$</td>
+                        <td colspan="1"><b>Total:</b></td>
+                        <td colspan="1">$totalAvaliacao$</td>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </td>
+              </tr>
+              <!-- BLOCK TABELA DESCONTOS - END -->
+              <tr><td><hr></td></tr>
+              <!-- BLOCK Texto - INICIO -->
+              <tr class="mainContentTable">
+                  <td class="mainContentTable">
+                    <div class="row nopadding">
+                      <h2>Comentário do Avaliador: </h2>
+                      <pre>$comentarioAvaliador$</pre>        
+                    </div>
+                  </td>
+              </tr>
+              <!-- BLOCK Texto - END -->
+
+              <tr><td><hr></td></tr>
+              <!-- BLOCK Texto - INICIO -->
+              <tr class="mainContentTable">
+                  <td class="mainContentTable">
+                    <div class="row nopadding">
+                      <h2>Certificado: </h2>
+                      
+                    </div>
+                    <div align="center">
+                      <a href="/certificado?$nomeLink$&$anoLink$">Clique aqui para visualizar o seu certificado</a>
+                    </div>
+                  </td>
+              </tr>
+              <!-- BLOCK Texto - END -->
+
+            </table>
+        </td>
+    </tr>
+    <!-- BLOCK CONTENT - END -->
+</table>
