@@ -22,7 +22,7 @@ class InterpretService
         #nome += nome.decrypt
         #nome
     else
-      "Não compreendi o seu desejo."
+      context
     end
   end
 end
