@@ -31,7 +31,6 @@ GEM
     multi_xml (0.6.0)
     mustermann (1.0.1)
     pg (0.21.0)
-    pg (0.21.0-x86-mingw32)
     pg_search (2.1.1)
       activerecord (>= 4.2)
       activesupport (>= 4.2)
@@ -71,6 +70,8 @@ GEM
     sinatra-activerecord (2.0.13)
       activerecord (>= 3.2)
       sinatra (>= 1.0)
+    sinatra-basic-auth (0.1.0)
+      sinatra
     thread_safe (0.3.6)
     tilt (2.0.8)
     tux (0.3.0)
@@ -83,7 +84,6 @@ GEM
 
 PLATFORMS
   ruby
-  x86-mingw32
 
 DEPENDENCIES
   activerecord
@@ -98,6 +98,7 @@ DEPENDENCIES
   rspec
   sinatra
   sinatra-activerecord
+  sinatra-basic-auth
   tux
 
 BUNDLED WITH

@@ -1,5 +1,6 @@
 require 'json'
 require 'sinatra'
+require 'sinatra/basic_auth'
 require 'sinatra/activerecord'
 require 'facebook/messenger'
 require './config/database'
@@ -13,6 +14,11 @@ Dir["./app/models/*.rb"].each {|file| require file }
 Dir["./app/services/**/*.rb"].each {|file| require file }
 
 class App < Sinatra::Base
+  register Sinatra::BasicAuth
+
+  authorize do |username, password|
+    username == USER_AUTH && password == PASSWORD_AUTH
+  end
 
   #set :root, "./app"
   set :views, "./app/views"
@@ -23,8 +29,10 @@ class App < Sinatra::Base
     redirect url + 'info'
   end
 
-  get '/info' do
-    html :info
+  protect do
+    get '/info' do
+      html :info
+    end
   end
 
   post '/webhook' do
