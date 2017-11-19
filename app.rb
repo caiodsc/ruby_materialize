@@ -47,7 +47,7 @@ class App < Sinatra::Base
     content_type :json
     {
         "platform": "facebook",
-        "speech": response,
+        "speech": result,
         "type": 0
     }
     .to_json
