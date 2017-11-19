@@ -1,4 +1,4 @@
-module FaqModule
+module FaqwModule
   class ListService
     def initialize(params, action)
       # TODO: identify origin and set company
