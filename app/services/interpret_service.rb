@@ -2,8 +2,7 @@ class InterpretService
   def self.call(context, action, params, facebookId)
     case context
       when "avaliacaofuncional"
-        return "Funcionou"
-        #ContextModule::AvaliacaoFuncionalService.new(params, action).call
+        ContextModule::AvaliacaoFuncionalService.new(params, action).call
       when "create"
         FaqModule::CreateService.new(params).call
       when "remove"
