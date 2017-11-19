@@ -42,8 +42,28 @@ class App < Sinatra::Base
   end
 
   get '/teste' do
-    @caio = request.path_info.to_s
+    #retorna
     @treta = @params[:id].decrypt
     erb :teste, :layout => :index
+  end
+
+  get '/contracheque' do
+
+  end
+
+  get '/minhaavaliacao' do
+
+  end
+
+  get '/certificado' do
+
+  end
+
+  get '/desconto' do
+
+  end
+
+  get '/bancohora' do
+
   end
 end
