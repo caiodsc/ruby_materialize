@@ -16,11 +16,11 @@ module ContextModule
           #return Date.today.year
           years_list = (Date.today.year-3..Date.today.year).to_a
           content_type :json
-          return {
-              "platform": "facebook",
+          {
               #"speech": "Qual contracheque deseja visualizar? 💵",
               "messages": [
                   {
+                      "platform": "facebook",
                       "type": 2,
                       "title": "Qual contracheque deseja visualizar? 💵",
                       "replies": years_list
