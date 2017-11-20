@@ -8,6 +8,7 @@ gem 'rake'
 gem 'pg_search'
 gem 'facebook-messenger'#,  :git => 'git://github.com/caiodsc/facebook_messenger.git'
 gem 'sinatra-basic-auth'
+gem 'rest-client'
 
 group :development do
  gem 'tux'

@@ -1,17 +1,19 @@
 require 'json'
 require 'sinatra'
+require 'rest-client'
 require 'sinatra/basic_auth'
 require 'sinatra/activerecord'
-require 'facebook/messenger'
 require './config/database'
 require_relative './config.rb'
 require_relative './encrypt_decrypt.rb'
-include Facebook::Messenger
 
+# Configurando a gem facebook-messenger
+require 'facebook/messenger'
+include Facebook::Messenger
 Facebook::Messenger::Subscriptions.subscribe(access_token: ACCESS_TOKEN)
 
+# Importando os diretórios
 Dir["./app/models/*.rb"].each {|file| require file }
-
 Dir["./app/services/**/*.rb"].each {|file| require file }
 
 class App < Sinatra::Base
@@ -22,7 +24,7 @@ class App < Sinatra::Base
   end
 
   # Helpers Declaration
-  helpers ApplicationHelper
+  #helpers Sinatra::App::ApplicationHelper
 
   # Specifying views and stylesheet directories
   set :views, "./app/views"
@@ -47,8 +49,7 @@ class App < Sinatra::Base
     else
       response = InterpretService.call(result["name"], result["action"], result["parameters"], result["parameters"]["facebook_sender_id"])
     end
-    #response += result.to_s
-
+    #response = result.to_s
     content_type :json
     response
   end
