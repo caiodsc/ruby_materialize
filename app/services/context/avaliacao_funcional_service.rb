@@ -26,7 +26,7 @@ module ContextModule
               ]
           }.to_json
           return response
-        when 'ano_escolhido'
+        when 'custom'
           years_list = (Date.today.year-3..Date.today.year).to_a
           response =
               {
