@@ -27,18 +27,11 @@ module ContextModule
           }.to_json
           return response
         when 'ano_escolhido'
-          years_list = (Date.today.year-3..Date.today.year).to_a
           response =
-              {
-                  "messages": [
-                      {
-                          "platform": "facebook",
-                          "type": 2,
-                          "title": "Qual contracheque deseja visualizar? 💵",
-                          "replies": years_list
-                      }
-                  ]
-              }.to_json
+          {
+              "speech": "Aguardando lógica...",
+              "displayText": "Aguardando lógica...",
+          }.to_json
           return response
         else
           return
