@@ -39,6 +39,7 @@ module ContextModule
                       }
                   ]
               }.to_json
+          return response
         else
           return
       end
