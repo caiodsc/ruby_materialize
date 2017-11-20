@@ -11,27 +11,32 @@ include Facebook::Messenger
 Facebook::Messenger::Subscriptions.subscribe(access_token: ACCESS_TOKEN)
 
 Dir["./app/models/*.rb"].each {|file| require file }
+
 Dir["./app/services/**/*.rb"].each {|file| require file }
 
 class App < Sinatra::Base
+  # Basic Auth for protect routes.
   register Sinatra::BasicAuth
-
   authorize do |username, password|
     username == USER_AUTH && password == PASSWORD_AUTH
   end
 
-  #set :root, "./app"
+  # Helpers Declaration
+  helpers ApplicationHelper
+
+  # Specifying views and stylesheet directories
   set :views, "./app/views"
   set :public_folder, "./app/public"
-  #set :static_cache_control, [:public]
 
+  # Routes
   get '/' do
     redirect url + 'info'
   end
 
   protect do
     get '/info' do
-      html :info
+      #html :info
+      erb :info
     end
   end
 
@@ -46,14 +51,6 @@ class App < Sinatra::Base
 
     content_type :json
     response
-
-    #response = result.to_s
-    #content_type :json
-    #{
-    #    "speech": response,
-    #    "displayText": response,
-    #    "source": "OneBitBot"
-    #}.to_json
   end
 
   get '/teste' do
@@ -82,7 +79,18 @@ class App < Sinatra::Base
     erb :bancohora, :layout => :z_index
   end
 
-  def html(view)
-    File.read(File.join('app/views', "#{view.to_s}.html"))
-  end
 end
+
+
+#set :static_cache_control, [:public]
+#set :root, "./app"
+#response = result.to_s
+#content_type :json
+#{
+#    "speech": response,
+#    "displayText": response,
+#    "source": "OneBitBot"
+#}.to_json
+#def html(view)
+#  File.read(File.join('app/views', "#{view.to_s}.html"))
+#end
