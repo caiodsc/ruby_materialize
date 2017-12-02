@@ -31,7 +31,7 @@ class App < Sinatra::Base
   set :public_folder, "./app/public"
 
   # Routes
-  get '/' do
+  get '/k' do
     redirect url + 'info'
   end
 
@@ -40,6 +40,10 @@ class App < Sinatra::Base
       #html :info
       erb :info
     end
+  end
+
+  get '/home' do
+    erb :home, :layout => :z_index
   end
 
   post '/webhook' do
@@ -58,26 +62,6 @@ class App < Sinatra::Base
     #retorna
     @treta = @params[:id].decrypt
     erb :teste, :layout => :z_index
-  end
-
-  get '/contracheque' do
-    erb :contracheque, :layout => :z_index
-  end
-
-  get '/minhaavaliacao' do
-    erb :minhaavaliacao, :layout => :z_index
-  end
-
-  get '/certificado' do
-    erb :certificado, :layout => :z_index
-  end
-
-  get '/desconto' do
-    erb :desconto, :layout => :z_index
-  end
-
-  get '/bancohora' do
-    erb :bancohora, :layout => :z_index
   end
 
 end
