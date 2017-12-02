@@ -8,9 +8,9 @@ require_relative './config.rb'
 require_relative './encrypt_decrypt.rb'
 
 # Configurando a gem facebook-messenger
-require 'facebook/messenger'
-include Facebook::Messenger
-Facebook::Messenger::Subscriptions.subscribe(access_token: ACCESS_TOKEN)
+#require 'facebook/messenger'
+#include Facebook::Messenger
+#Facebook::Messenger::Subscriptions.subscribe(access_token: ACCESS_TOKEN)
 
 # Importando os diretórios
 Dir["./app/models/*.rb"].each {|file| require file }

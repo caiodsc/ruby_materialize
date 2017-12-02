@@ -1,15 +1,26 @@
+<script>
+    $( document ).ready(function() {
+    console.log( "ready!" );
+    Materialize.fadeInImage('#image-test');
+    //Materialize.showStaggeredList('#staggered-test');
+    });
+</script>
 <div class="container">
   <div class="row">
-  <div class="col l8 s12"><h2 class="blue-grey-text darken-4">Amazon Acqua Park</h2>
-  <p class="blue-grey-text darken-3">Presidente Figueiredo</p>
-  </div>
+  <ul id="staggered-test">
+    <li>
+      <div class="col l8 s12"><h2 class="blue-grey-text darken-4">Amazon Acqua Park</h2>
+      <p class="blue-grey-text darken-3">Presidente Figueiredo</p>
+      </div>
+    </li>
+  </ul>
   <div class="col l4 s12 center-align">
-    <img style="width: 200px" src="icons/favicon.ico"/>
+    <img id="image-test" style="width: 200px" src="icons/favicon.ico"/>
   </div>
 </div>
 </div>
 <div class="container video-container">
-  <iframe width="853" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen></iframe>
+  <!--<iframe width="853" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen></iframe>-->
 </div>
 <div style="position: fixed; right: 15px; bottom: 15px;">
 <a class="btn btn-floating btn-large blue lighten-2"><i class="material-icons">edit</i></a>
