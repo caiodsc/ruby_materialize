@@ -7,4 +7,15 @@ body {
 main {
     flex: 1 0 auto;
 }
-      
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+.row.grid .cell {
+// flex: auto;
+// flex: 0;
+// flex: 1;
+    margin-left: 0;
+}

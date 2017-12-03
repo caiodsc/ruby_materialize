@@ -1,8 +1,19 @@
+<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
 <script>
     $( document ).ready(function() {
     console.log( "ready!" );
     Materialize.fadeInImage('#image-test');
+    function myMap() {
+        var myCenter = new google.maps.LatLng(-2.095346, -60.000648);
+        var mapCanvas = document.getElementById("map");
+        var mapOptions = {center: myCenter, zoom: 15};
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+        var marker = new google.maps.Marker({position:myCenter});
+        marker.setMap(map);
+    }
+    myMap();
     //Materialize.showStaggeredList('#staggered-test');
+    //$('.tap-target').tapTarget('open');
     });
 </script>
 <div class="container">
@@ -19,9 +30,77 @@
   </div>
 </div>
 </div>
-<div class="container video-container">
-  <!--<iframe width="853" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen></iframe>-->
+<div class="container">
+  <div id="map" style="width:100%;height:400px;background:#ffffff"></div>
 </div>
-<div style="position: fixed; right: 15px; bottom: 15px;">
-<a class="btn btn-floating btn-large blue lighten-2"><i class="material-icons">edit</i></a>
+<div class="container">
+<div class="col l8 s12"><h2 class="blue-grey-text darken-4">Fale Conosco</h2>
+  <p class="blue-grey-text darken-3">Entre em contato e logo retornaremos.</p>
+</div></div>
+<div class="container">
+  <div class="row">
+  <div class="col l7 hide-on-med-and-down">
+  </br>
+    <h5 class="blue-grey-text darken-3"><b>Telefone:</b> +55 92 993713614</h5>
+    <h5 class="blue-grey-text darken-3"><b>E-mail:</b> contato@amazonacquapark.io</h5>
+    <h5 class="blue-grey-text darken-3"><b>Website:</b> www.amazonacquapark.io</h5>
+  </div>
+    <div class="col l5 s12">
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="first_name" type="text" class="validate">
+              <label for="first_name">Nome</label>
+            </div>
+            <div class="input-field col s12">
+              <input id="disabled" type="text" class="validate">
+              <label for="disabled">E-mail</label>
+            </div>
+            <div class="input-field col s12">
+              <input id="password" type="password" class="validate">
+              <label for="password">Assunto</label>
+            </div>
+                <div class="input-field col s12">
+                  <textarea id="textarea1" class="materialize-textarea"></textarea>
+                  <label for="textarea1">Textarea</label>
+                </div>
+              </div>
+          <a class="waves-effect waves-light btn blue">Enviar</a>
+
+        </form>
+
+      </div>
+  </div>
+  </div>
 </div>
+<!--<div class="container video-container">
+  <iframe width="853" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>-->
+<!--<div style="position: fixed; right: 15px; bottom: 15px;">
+<a class="btn btn-floating btn-large blue lighten-2 pulse"><i class="material-icons">face</i></a>
+</div>-->
+
+<div class="fixed-action-btn">
+<a id="menu" class="btn-floating btn-large waves-effect waves-light blue tooltipped" data-position="left" data-delay="50" data-tooltip="Assistente Virtual"><i class="material-icons">face</i></a>
+</div>
+<!--<div class="tap-target blue lighten-1" data-activates="menu">
+  <div class="tap-target-content">
+    <h5 class="blue-grey-text darken-4">Assistente Virtual</h5>
+    <p class="blue-grey-text darken-e">Conheça nosso assistente virtual, alugue chalés, tire dúvidas e muito mais!</p>
+  </div>
+</div>-->
+
+  <!--
+<div class="fixed-action-btn">
+  <a class="btn-floating btn-large red">
+    <i class="large material-icons">mode_edit</i>
+  </a>
+  <ul>
+    <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+    <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+    <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+    <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+  </ul>
+</div>
+-->
